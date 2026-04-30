@@ -11,6 +11,7 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import PrivacyPolicy from './pages/public/PrivacyPolicy';
 import TermsOfService from './pages/public/TermsOfService';
+import SizeGuide from './pages/public/SizeGuide';
 
 // Simple placeholders for missing pages
 const NewArrivals = () => <Collection />; 
@@ -33,7 +34,7 @@ const LayoutManager = ({ children }) => {
             <div className="col-span-1 sm:col-span-2">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 tracking-widest text-slate-900 uppercase">COZY FITS<span className="text-accent-gold">.</span>PK</h2>
               <p className="text-slate-500 max-w-sm leading-relaxed text-sm">
-                Elevating children's fashion with a focus on luxury, comfort, and sustainability. Every piece is crafted with love and care for your little ones.
+                Because Even the Smallest Deserve the Finest — UK Baby Couture in Pakistan
               </p>
             </div>
             <div>
@@ -48,8 +49,8 @@ const LayoutManager = ({ children }) => {
               <h4 className="font-bold mb-4 sm:mb-6 text-[10px] sm:text-xs tracking-[0.2em] uppercase text-slate-400">Support</h4>
               <ul className="space-y-3 sm:space-y-4 text-slate-600 text-xs sm:text-sm font-medium">
                 <li><Link to="/terms-of-service" className="hover:text-accent-gold transition-colors">Shipping & Returns</Link></li>
-                <li><a href="#" className="hover:text-accent-gold transition-colors">Size Guide</a></li>
-                <li><a href="#" className="hover:text-accent-gold transition-colors">Contact Us</a></li>
+                <li><Link to="/size-guide" className="hover:text-accent-gold transition-colors">Size Guide</Link></li>
+                <li><a href="https://wa.me/923315033299" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors">WhatsApp Us</a></li>
               </ul>
             </div>
           </div>
@@ -127,6 +128,7 @@ function App() {
               <Route path="/admin-dashboard" element={<AdminDashboard />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/size-guide" element={<SizeGuide />} />
             </Routes>
           </LayoutManager>
         </motion.div>

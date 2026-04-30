@@ -58,7 +58,9 @@ const Checkout = () => {
   };
 
   const discountAmount = appliedPromo ? (total * appliedPromo.discount_percentage / 100) : 0;
-  const finalTotal = total - discountAmount;
+  const subtotalAfterDiscount = total - discountAmount;
+  const shippingFee = subtotalAfterDiscount >= 3000 ? 0 : 250;
+  const finalTotal = subtotalAfterDiscount + shippingFee;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -85,6 +87,7 @@ const Checkout = () => {
             quantity: item.quantity,
             price_pkr: item.price_pkr
           })),
+          shipping_fee: shippingFee,
           status: 'pending'
         }])
         .select()
@@ -415,7 +418,9 @@ const Checkout = () => {
                 )}
                 <div className="flex justify-between text-[10px] sm:text-xs font-bold tracking-[0.1em] sm:tracking-[0.2em] text-slate-400 uppercase">
                   <span>Shipping</span>
-                  <span className="text-green-500">FREE</span>
+                  <span className={shippingFee === 0 ? "text-green-500" : "text-slate-900"}>
+                    {shippingFee === 0 ? 'FREE' : `PKR ${shippingFee.toLocaleString()}`}
+                  </span>
                 </div>
                 <div className="pt-4 sm:pt-6 flex justify-between items-end">
                   <div>

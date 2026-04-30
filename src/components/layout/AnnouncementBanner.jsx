@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const AnnouncementBanner = () => {
   const phrases = [
-    "HANDCRAFTED IN PAKISTAN",
-    "100% ORGANIC SILK",
-    "GLOBAL SHIPPING"
+    "100% IMPORTED ITEMS FROM THE UK",
+    "LUXURY BABYWEAR",
+    "SHIPPING ALL OVER PAKISTAN"
   ];
 
   // Repeat the phrases array to ensure enough width for seamless looping

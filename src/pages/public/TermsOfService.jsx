@@ -39,7 +39,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-xl font-bold text-dark-slate mb-4 uppercase tracking-widest">Shipping and Delivery</h2>
               <p>
-                We offer global shipping. Delivery times vary based on location and the complexity of the handcrafted pieces. We are not responsible for delays caused by customs or third-party shipping carriers, but we will assist in tracking your "treasures" until they arrive.
+                We offer shipping all over Pakistan. Delivery times vary based on location. We are not responsible for delays caused by third-party shipping carriers, but we will assist in tracking your "treasures" until they arrive.
               </p>
             </section>
 

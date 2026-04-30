@@ -130,7 +130,7 @@ const Home = () => {
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center mx-10">
-              <span className="text-xs font-bold tracking-[0.5em] text-white/40 uppercase">Handcrafted in Pakistan • 100% Organic Silk • Global Shipping</span>
+              <span className="text-xs font-bold tracking-[0.5em] text-white/40 uppercase">100% Imported Items from the UK • Luxury Babywear • Shipping All Over Pakistan</span>
               <div className="w-2 h-2 rounded-full bg-accent-gold mx-10 shadow-[0_0_10px_#D4AF37]" />
             </div>
           ))}
@@ -214,18 +214,33 @@ const Home = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5 }}
-            className="space-y-6 sm:space-y-10"
+            className="space-y-12"
           >
-            <div>
-              <span className="text-[8px] sm:text-[10px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-accent-gold uppercase">The Heritage</span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 leading-tight text-dark-slate uppercase tracking-tighter">
-                Born from <br /><span className="italic font-normal">Tradition.</span>
-              </h2>
+            <div className="space-y-6">
+              <div>
+                <span className="text-[8px] sm:text-[10px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-accent-gold uppercase">The Heritage</span>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 leading-tight text-dark-slate uppercase tracking-tighter">
+                  Born from <br /><span className="italic font-normal">British Tradition.</span>
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg text-slate-500 leading-relaxed font-light">
+                CozyFits.pk is rooted in a legacy of timeless craftsmanship and refined elegance. Every piece reflects an enduring commitment to quality, where soft fabrics and delicate details are thoughtfully designed to honor life’s earliest moments. From the heart of the UK to the homes of Pakistan, our heritage is woven into every stitch.
+              </p>
             </div>
-            <p className="text-base sm:text-lg text-slate-500 leading-relaxed font-light">
-              Cozy Fits.pk was born from a profound vision: to bring Pakistani craftsmanship to the global stage. We believe that childhood is a precious canvas, blending traditional strength with the softness of 100% organic silk.
-            </p>
-            <div className="pt-4 sm:pt-6">
+
+            <div className="space-y-6">
+              <div>
+                <span className="text-[8px] sm:text-[10px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-accent-gold uppercase">Our Vision</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 leading-tight text-dark-slate uppercase tracking-tighter">
+                  To become Pakistan’s most <span className="italic font-normal">Trusted Destination.</span>
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg text-slate-500 leading-relaxed font-light">
+                Bringing timeless British elegance, uncompromising quality, and gentle comfort to every child’s beginning.
+              </p>
+            </div>
+
+            <div className="pt-4">
               <Link to="/collection" className="group inline-flex items-center space-x-4">
                 <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase">Start Your Journey</span>
                 <div className="w-8 sm:w-12 h-[1px] bg-dark-slate group-hover:w-16 sm:group-hover:w-24 transition-all duration-700" />

@@ -212,7 +212,7 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold">
                     <Truck size={16} className="sm:w-[20px] sm:h-[20px]" />
                   </div>
-                  <span className="text-[8px] sm:text-[10px] font-bold tracking-widest text-slate-500 uppercase">Global Shipping</span>
+                  <span className="text-[8px] sm:text-[10px] font-bold tracking-widest text-slate-500 uppercase">Shipping All Over Pakistan</span>
                 </div>
               </div>
             </div>
