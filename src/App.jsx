@@ -50,6 +50,7 @@ const LayoutManager = ({ children }) => {
               <ul className="space-y-3 sm:space-y-4 text-slate-600 text-xs sm:text-sm font-medium">
                 <li><Link to="/terms-of-service" className="hover:text-accent-gold transition-colors">Shipping & Returns</Link></li>
                 <li><Link to="/size-guide" className="hover:text-accent-gold transition-colors">Size Guide</Link></li>
+                <li><Link to="/admin-login" className="hover:text-accent-gold transition-colors">Admin Login</Link></li>
                 <li><a href="https://wa.me/923315033299" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors">WhatsApp Us</a></li>
               </ul>
             </div>

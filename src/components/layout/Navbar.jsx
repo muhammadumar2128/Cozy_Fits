@@ -67,7 +67,7 @@ const Navbar = () => {
             >
               <Link to="/collection" onClick={() => setIsOpen(false)} className="uppercase">Collection</Link>
               <Link to="/new-arrival" onClick={() => setIsOpen(false)} className="uppercase">New Arrivals</Link>
-              <Link to="/about" onClick={() => setIsOpen(false)} className="uppercase">Our Story</Link>
+              <Link to="/admin-login" onClick={() => setIsOpen(false)} className="uppercase text-accent-gold pt-4 border-t border-slate-100">Admin Portal</Link>
             </motion.div>
           )}
         </AnimatePresence>
