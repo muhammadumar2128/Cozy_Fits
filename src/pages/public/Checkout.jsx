@@ -59,7 +59,7 @@ const Checkout = () => {
 
   const discountAmount = appliedPromo ? (total * appliedPromo.discount_percentage / 100) : 0;
   const subtotalAfterDiscount = total - discountAmount;
-  const shippingFee = subtotalAfterDiscount >= 3000 ? 0 : 250;
+  const shippingFee = subtotalAfterDiscount > 3000 ? 0 : 250;
   const finalTotal = subtotalAfterDiscount + shippingFee;
 
   const handleInputChange = (e) => {
