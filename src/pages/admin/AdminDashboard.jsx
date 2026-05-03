@@ -244,7 +244,8 @@ const ProductManager = () => {
     stock: 0,
     sizes: 'New Born, 3 Months, 6 Months, 1 Year, 2 Years',
     is_new_arrival: false,
-    image_files: [] 
+    image_files: [],
+    existing_image_urls: []
   });
 
   useEffect(() => {
@@ -269,7 +270,8 @@ const ProductManager = () => {
       stock: product.stock,
       sizes: product.sizes?.join(', ') || 'New Born, 3 Months, 6 Months, 1 Year, 2 Years',
       is_new_arrival: product.is_new_arrival || false,
-      image_files: []
+      image_files: [],
+      existing_image_urls: product.image_urls || []
     });
     setShowAdd(true);
   };
@@ -301,11 +303,11 @@ const ProductManager = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      let image_urls = editingProduct ? (editingProduct.image_urls || []) : [];
+      let image_urls = editingProduct ? formData.existing_image_urls : [];
       
       if (formData.image_files.length > 0) {
         const uploadedUrls = await uploadImages(formData.image_files);
-        image_urls = editingProduct ? [...image_urls, ...uploadedUrls] : uploadedUrls;
+        image_urls = [...image_urls, ...uploadedUrls];
       }
 
       if (image_urls.length === 0) {
@@ -344,7 +346,8 @@ const ProductManager = () => {
         stock: 0, 
         sizes: 'New Born, 3 Months, 6 Months, 1 Year, 2 Years', 
         is_new_arrival: false, 
-        image_files: [] 
+        image_files: [],
+        existing_image_urls: []
       });
       fetchData();
     } catch (err) {
@@ -509,13 +512,35 @@ const ProductManager = () => {
                           <ImageIcon className="text-slate-300" size={28} />
                           <span className="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-widest uppercase">
                             {formData.image_files.length > 0 
-                              ? `${formData.image_files.length} files selected` 
-                              : 'Upload Images'}
+                              ? `${formData.image_files.length} new files selected` 
+                              : 'Upload New Images'}
                           </span>
                         </label>
                       </div>
-                      {editingProduct && editingProduct.image_urls?.length > 0 && (
-                        <p className="text-[7px] lg:text-[8px] font-bold text-slate-400 uppercase tracking-widest px-4">Existing images will be kept unless you upload new ones.</p>
+                      
+                      {editingProduct && formData.existing_image_urls?.length > 0 && (
+                        <div className="space-y-2">
+                          <p className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-4">Existing Images</p>
+                          <div className="flex flex-wrap gap-4">
+                            {formData.existing_image_urls.map((url, idx) => (
+                              <div key={idx} className="relative w-20 h-24 rounded-xl overflow-hidden shadow-sm">
+                                <img src={url} alt={`Product ${idx}`} className="w-full h-full object-cover" />
+                                <button 
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData(prev => ({
+                                      ...prev,
+                                      existing_image_urls: prev.existing_image_urls.filter((_, i) => i !== idx)
+                                    }));
+                                  }}
+                                  className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full hover:bg-red-600 transition-colors"
+                                >
+                                  <X size={12} />
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       )}
                     </div>
                   </div>
